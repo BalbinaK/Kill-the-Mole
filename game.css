@@ -9,3 +9,8 @@
   background: green;
   border: 1px solid darkgreen;
 }
+
+.mole {
+  background: url("mole.png") no-repeat center;
+  background-size: 80%;
+}
