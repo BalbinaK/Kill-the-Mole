@@ -15,7 +15,7 @@
   background-image: url("mole.png");
   background-repeat: no-repeat;
   background-position: 0px 0px;
-  animation: animatedCreature 0.5s linear;
+  animation: creatureAppears 0.5s linear;
   background-size: 99%;
 }
 
@@ -24,11 +24,20 @@
   background-image: url("butterfly.png");
   background-repeat: no-repeat;
   background-position: 0px 0px;
-  animation: animatedCreature 0.5s linear;
+  animation: creatureAppears 0.5s linear;
   background-size: 99%;
 }
 
-@keyframes animatedCreature {
+@keyframes creatureHides {
+  from {
+    background-position: 0 0px;
+  }
+  to {
+    background-position: 0 45px;
+  }
+}
+
+@keyframes creatureAppears {
   from {
     background-position: 0 45px;
   }
