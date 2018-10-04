@@ -7,21 +7,22 @@
   renderBoard(board, height, width)
   showCreature('mole')
   showCreature('butterfly')
-  killThemAll()
+  killThemAll('mole')
+  killThemAll('butterfly')
 
   //funkcja showCreature ze wszystkich wolnych komórek z klasą "cell" 
   //losuje jedną i nadaje jej dodatkową klasę (tutaj: "mole" lub "butterfly")
 
-  function killThemAll() {
-    board.addEventListener('click', function (event) {
-      if (event.target.classList.contains('mole')) {
-        event.target.style.animation = 'creatureHides 0.2s linear'
-        setTimeout (function () {
-          event.target.classList.remove('mole')
-        }, 201)
-      }
-    })
-  }
+function killThemAll(name) {
+  board.addEventListener('click', function (event) {
+    if (event.target.classList.contains(name)) {
+      event.target.style.animation = 'creatureHides 0.2s linear'
+      setTimeout (function () {
+        event.target.classList.remove(name)
+      }, 201)
+    }
+  })
+}
 
   function showCreature(name) {
     var freeCells = document.querySelectorAll('.cell:not(.mole):not(.butterfly)');
