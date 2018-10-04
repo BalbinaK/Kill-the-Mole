@@ -6,6 +6,15 @@ function build (item) {
   return document.createElement(item)
 }
 
+// Funkcja range zwraca tablicę o takiej długości jak wartość argumentu `size`
+function range (size) {
+  var result = [];
 
+  for (let i = 0; i < size; i++) {
+    result.push(i)
+  }
+  
+  return result
+}
 
 })()
