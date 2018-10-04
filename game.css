@@ -15,11 +15,20 @@
   background-image: url("mole.png");
   background-repeat: no-repeat;
   background-position: 0px 0px;
-  animation: animatedMole 0.5s linear;
+  animation: animatedCreature 0.5s linear;
   background-size: 99%;
 }
 
-@keyframes animatedMole {
+.butterfly {
+  background-color: green;
+  background-image: url("butterfly.png");
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  animation: animatedCreature 0.5s linear;
+  background-size: 99%;
+}
+
+@keyframes animatedCreature {
   from {
     background-position: 0 45px;
   }

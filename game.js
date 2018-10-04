@@ -5,12 +5,13 @@
 
   renderBoard(board, height, width)
   showCreature('mole')
+  showCreature('butterfly')
 
   //funkcja showMole ze wszystkich wolnych komórek z klasą "cell" 
   //losuje jedną i nadaje jej dodatkową klasę "mole"
   
   function showCreature (name) {
-    var freeCells = document.querySelectorAll('.cell:not(.mole)');
+    var freeCells = document.querySelectorAll('.cell:not(.mole):not(.butterfly)');
     var randomIndex = Math.floor(Math.random() * freeCells.length);
     var randomCell = freeCells[randomIndex];
     randomCell.classList.add(name);
