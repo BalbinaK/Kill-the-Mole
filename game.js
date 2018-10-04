@@ -4,15 +4,16 @@
   var width = height
 
   renderBoard(board, height, width)
-  showMole()
+  showCreature('mole')
 
   //funkcja showMole ze wszystkich wolnych komórek z klasą "cell" 
   //losuje jedną i nadaje jej dodatkową klasę "mole"
-  function showMole () {
+  
+  function showCreature (name) {
     var freeCells = document.querySelectorAll('.cell:not(.mole)');
     var randomIndex = Math.floor(Math.random() * freeCells.length);
     var randomCell = freeCells[randomIndex];
-    randomCell.classList.add('mole');
+    randomCell.classList.add(name);
   }
 
   // Funkcja build zwraca nowy DOM Node o nazwie takiej jak wartość argumentu `name`
@@ -47,7 +48,5 @@
     })
   }
   
-
-
 
 })()
