@@ -3,12 +3,13 @@
   var height = 5;
   var width = height
 
+  //wywołanie funkcji: tworzenia planszy, losowania kreta i losowania motyla
   renderBoard(board, height, width)
   showCreature('mole')
   showCreature('butterfly')
 
-  //funkcja showMole ze wszystkich wolnych komórek z klasą "cell" 
-  //losuje jedną i nadaje jej dodatkową klasę "mole"
+  //funkcja showCreature ze wszystkich wolnych komórek z klasą "cell" 
+  //losuje jedną i nadaje jej dodatkową klasę (tutaj: "mole" lub "butterfly")
   
   function showCreature (name) {
     var freeCells = document.querySelectorAll('.cell:not(.mole):not(.butterfly)');
