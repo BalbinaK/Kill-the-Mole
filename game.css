@@ -14,6 +14,16 @@
   background-color: green;
   background-image: url("mole.png");
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 80%;
+  background-position: 0px 0px;
+  animation: animatedMole 0.5s linear;
+  background-size: 99%;
+}
+
+@keyframes animatedMole {
+  from {
+    background-position: 0 45px;
+  }
+  to {
+    background-position: 0 0px;
+  }
 }
