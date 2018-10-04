@@ -10,9 +10,9 @@
   killThemAll('mole')
   killThemAll('butterfly')
 
-  //funkcja showCreature ze wszystkich wolnych komórek z klasą "cell" 
-  //losuje jedną i nadaje jej dodatkową klasę (tutaj: "mole" lub "butterfly")
 
+// funkcja killThemAll na kliknięcie w komórkę z klasą o określonej nazwie animuje ruch jej obrazka w dół,
+// a sama komórka traci klasę po upłynięciu czasu animacji
 function killThemAll(name) {
   board.addEventListener('click', function (event) {
     if (event.target.classList.contains(name)) {
@@ -23,7 +23,8 @@ function killThemAll(name) {
     }
   })
 }
-
+  //funkcja showCreature ze wszystkich wolnych komórek z klasą "cell" 
+  //losuje jedną i nadaje jej dodatkową klasę (tutaj: "mole" lub "butterfly")
   function showCreature(name) {
     var freeCells = document.querySelectorAll('.cell:not(.mole):not(.butterfly)');
     var randomIndex = Math.floor(Math.random() * freeCells.length);
