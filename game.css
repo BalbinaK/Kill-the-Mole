@@ -11,6 +11,9 @@
 }
 
 .mole {
-  background: url("mole.png") no-repeat center;
+  background-color: green;
+  background-image: url("mole.png");
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: 80%;
 }
