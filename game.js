@@ -58,6 +58,8 @@
     randomCell.style.animation = 'creatureAppears 0.5s linear'
   }
 
+  //funkcja showAgainCreature znajduje komórkę z klasą 'mole' lub 'butterfly'
+  //i jeśli ją znajdzie zabiera jej tę klasę, po czym losuje nową pozycję tego samego stworzenia
   function showAgainCreature(name) {
     var creature = document.querySelector('.' + name);
     if (creature) {
@@ -65,7 +67,6 @@
       creature.classList.remove(name);
     }
     showCreature(name);
-    
   }
 
   // Funkcja build zwraca nowy DOM Node o nazwie takiej jak wartość argumentu `name`
