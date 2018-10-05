@@ -6,25 +6,42 @@
   var height = 5;
   var width = height;
   var score = 0;
+  var id, id2
 
 
-  //wywołanie funkcji: tworzenia planszy, losowania kreta i losowania motyla
-  renderBoard(board, height, width);
+  play()
+  
+  
+  function play() {
+    //wywołanie funkcji: tworzenia planszy, losowania kreta i losowania motyla
+    renderBoard(board, height, width);
 
-  showCreature('mole');
-  showCreature('butterfly');
+    showCreature('mole');
+    showCreature('butterfly');
 
-  setInterval(function () {
-    showAgainCreature('mole')
-  }, 1000)
+    id = setInterval(function () {
+      showAgainCreature('mole')
+    }, 1000)
 
-  setInterval(function () {
-    showAgainCreature('butterfly')
-  }, 2000)
+    id2 = setInterval(function () {
+      showAgainCreature('butterfly')
+    }, 2000)
 
-  killsMole();
-  killsButterfly();
+    killsMole();
+    killsButterfly();
+  }
 
+function gameOver() {
+  clearInterval(id);
+  clearInterval(id2);
+  endScreenAppears();
+
+}
+
+function endScreenAppears() {
+  var endScreen = document.querySelector('.endScreen');
+  endScreen.style.display = 'block';
+}
 
   function killsMole() {
     killThemAll('mole')
@@ -39,7 +56,7 @@
   function killThemAll(name) {
     board.addEventListener('click', function (event) {
       if (event.target.classList.contains(name)) {
-        name === 'mole' ? score += 1 : score -= 1
+        name === 'mole' ? score += 1 : gameOver()
         scoreDiv.innerHTML = 'Score: ' + score;
         event.target.style.animation = 'creatureHides 0.2s linear'
         setTimeout(function () {

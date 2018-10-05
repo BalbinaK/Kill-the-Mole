@@ -4,9 +4,25 @@ flex-direction: column;
 align-items: center;
 }
 
+.endScreen {
+  display: none;
+  position: absolute;
+  top: 60px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  background: lightgreen;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid green;
+  border-radius: 5px;
+}
+
 .score {
   width: 100px;
   padding: 5px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
   background: lightgreen;
   text-align: center;
   border: 1px solid green;
