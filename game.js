@@ -3,19 +3,25 @@
 (function () {
   var board = document.querySelector('#app');
   var scoreDiv = document.querySelector('.score')
+  var playButton = document.querySelector('.play')
+  var endScreen = document.querySelector('.endScreen')
   var height = 5;
   var width = height;
   var score = 0;
   var id, id2
 
+  //wywołanie funkcji: tworzenia planszy, losowania kreta i losowania motyla
+  renderBoard(board, height, width);
 
-  play()
-  
-  
+  window.addEventListener('click', function (event) {
+    if (event.target === playButton) {
+      endScreen.style.display = 'none';
+      
+      play();
+    }
+  })
+
   function play() {
-    //wywołanie funkcji: tworzenia planszy, losowania kreta i losowania motyla
-    renderBoard(board, height, width);
-
     showCreature('mole');
     showCreature('butterfly');
 
@@ -31,16 +37,15 @@
     killsButterfly();
   }
 
-function gameOver() {
-  clearInterval(id);
-  clearInterval(id2);
-  endScreenAppears();
-}
+  function gameOver() {
+    clearInterval(id);
+    clearInterval(id2);
+    endScreenAppears();
+  }
 
-function endScreenAppears() {
-  var endScreen = document.querySelector('.endScreen');
-  endScreen.style.display = 'block';
-}
+  function endScreenAppears() {
+    endScreen.style.display = 'block';
+  }
 
   function killsMole() {
     killThemAll('mole')
