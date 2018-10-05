@@ -21,10 +21,15 @@
       if (allMoles.length !== 0) {
         allMoles.forEach(x => x.classList.remove('mole'));
       }
-      
+      resetScore();
       play();
     }
   })
+
+function resetScore() {
+    score = 0
+    scoreDiv.innerHTML =  'Score: ' + score;
+}
 
   function play() {
     showCreature('mole');
