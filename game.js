@@ -21,11 +21,11 @@
 
     id = setInterval(function () {
       showAgainCreature('mole')
-    }, 1000)
+    }, 600)
 
     id2 = setInterval(function () {
       showAgainCreature('butterfly')
-    }, 2000)
+    }, 1000)
 
     killsMole();
     killsButterfly();
@@ -35,7 +35,6 @@ function gameOver() {
   clearInterval(id);
   clearInterval(id2);
   endScreenAppears();
-
 }
 
 function endScreenAppears() {
