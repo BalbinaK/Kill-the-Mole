@@ -92,3 +92,12 @@ align-items: center;
     background-position: 0 0px;
   }
 }
+
+@keyframes creatureKilled {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: green;
+  }
+}

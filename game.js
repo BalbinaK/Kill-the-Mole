@@ -74,7 +74,7 @@ function resetScore() {
       if (event.target.classList.contains(name)) {
         name === 'mole' ? score += 1 : gameOver()
         scoreDiv.innerHTML = 'Score: ' + score;
-        event.target.style.animation = 'creatureHides 0.2s linear'
+        event.target.style.animation = 'creatureKilled 0.5s linear'
         setTimeout(function () {
           event.target.classList.remove(name)
         }, 201)
