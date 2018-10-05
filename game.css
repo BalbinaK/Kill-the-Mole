@@ -1,14 +1,29 @@
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .container {
 display: flex;
 flex-direction: column;
 align-items: center;
 }
 
+.title {
+  width: 100%:
+  height: auto;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.description {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
 .endScreen {
   display: none;
   position: absolute;
   top: 60px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: bold;
   font-size: 40px;
   background: lightgreen;
@@ -21,12 +36,11 @@ align-items: center;
 .score, .button {
   width: 100px;
   padding: 5px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 5px;
   font-weight: bold;
   background: lightgreen;
   text-align: center;
   border: 1px solid green;
-  border-top: none;
   box-sizing: border-box;
   border-radius: 5px;
 }
