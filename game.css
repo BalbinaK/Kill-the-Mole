@@ -23,9 +23,9 @@ align-items: center;
 .endScreen {
   display: none;
   position: absolute;
-  top: 60px;
+  top: 120px;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 60px;
   background: lightgreen;
   text-align: center;
   padding: 5px;
@@ -51,16 +51,15 @@ align-items: center;
 }
 
 .button {
-  cursor: hand;
-  cursor: pointer;
   margin-right: 5px;
 }
 
-.button:hover {
+.play:hover {
+  cursor: pointer;
   background-color: #58AB2B;
 }
 
-.button:active {
+.play:active {
   background-color: rgb(136, 187, 109)
 }
 
