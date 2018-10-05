@@ -1,28 +1,42 @@
 'use strict';
+var score = 0;
 
 (function () {
   var board = document.querySelector('#app');
+  var scoreDiv = document.querySelector('.score')
   var height = 5;
   var width = height;
+  
 
   //wywołanie funkcji: tworzenia planszy, losowania kreta i losowania motyla
   renderBoard(board, height, width);
 
   showCreature('mole');
   showCreature('butterfly');
-  
-  setInterval(function() {
+
+  setInterval(function () {
     showAgainCreature('mole')
-  }, 1000) 
-  
-  setInterval(function(){
+  }, 1000)
+
+  setInterval(function () {
     showAgainCreature('butterfly')
   }, 2000)
+
+  killsMole();
+  killsButterfly();
   
 
-  killThemAll('mole')
-  killThemAll('butterfly')
+  function killsMole() {
+    killThemAll('mole')
+    score += 1;
+    // scoreDiv.innerHTML = 'Score:' + score += 1;
+  }
 
+  function killsButterfly() {
+    killThemAll('butterfly')
+    score -= 1;
+    // scoreDiv.innerHTML = 'Score:' + score -= 1;
+  }
 
   // funkcja killThemAll na kliknięcie w komórkę z klasą o określonej nazwie animuje ruch jej obrazka w dół,
   // a sama komórka traci klasę po upłynięciu czasu animacji
