@@ -25,7 +25,7 @@
       play();
     }
   })
-  
+
   killsMole();
   killsButterfly();
 
@@ -47,7 +47,7 @@
 
     id2 = setInterval(function () {
       showAgainCreature('butterfly')
-    }, 1000)
+    }, 700)
   }
 
   function gameOver() {
