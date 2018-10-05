@@ -15,7 +15,7 @@
  
   //włączanie gry po wciśnięciu przycisku PLAY
   window.addEventListener('click', function (event) {
-    if (event.target === playButton) {
+    if (event.target.classList.contains('play')) {
       endScreen.style.display = 'none';
       let allMoles = document.querySelectorAll('.mole')
       if (allMoles.length !== 0) {
@@ -40,6 +40,7 @@
 
     killsMole();
     killsButterfly();
+    playButton.classList.remove('play')
   }
 
   function gameOver() {

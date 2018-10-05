@@ -18,7 +18,7 @@ align-items: center;
   border-radius: 5px;
 }
 
-.score, .play {
+.score, .button {
   width: 100px;
   padding: 5px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -31,16 +31,16 @@ align-items: center;
   border-radius: 5px;
 }
 
-.play {
+.button {
   cursor: hand;
   cursor: pointer;
 }
 
-.play:hover {
+.button:hover {
   background-color: #58AB2B;
 }
 
-.play:active {
+.button:active {
   background-color: rgb(136, 187, 109)
 }
 
