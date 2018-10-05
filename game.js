@@ -11,24 +11,36 @@
   killThemAll('butterfly')
 
 
-// funkcja killThemAll na kliknięcie w komórkę z klasą o określonej nazwie animuje ruch jej obrazka w dół,
-// a sama komórka traci klasę po upłynięciu czasu animacji
-function killThemAll(name) {
-  board.addEventListener('click', function (event) {
-    if (event.target.classList.contains(name)) {
-      event.target.style.animation = 'creatureHides 0.2s linear'
-      setTimeout (function () {
-        event.target.classList.remove(name)
-      }, 201)
-    }
-  })
-}
+  // funkcja killThemAll na kliknięcie w komórkę z klasą o określonej nazwie animuje ruch jej obrazka w dół,
+  // a sama komórka traci klasę po upłynięciu czasu animacji
+  function killThemAll(name) {
+    board.addEventListener('click', function (event) {
+      if (event.target.classList.contains(name)) {
+        event.target.style.animation = 'creatureHides 0.2s linear'
+        setTimeout(function () {
+          event.target.classList.remove(name)
+        }, 201)
+      }
+    })
+  }
+
+
+  //drawNumberFromRange losuje liczbę z przedziału 0 < size
+  function drawNumberFromRange(size) {
+    return Math.floor(Math.random() * size);
+  }
+
+  //drawCellFromSelector losuje komórkę spośród komórek np. o danej klasie
+  function drawCellFromSelector(selector) {
+    var freeCells = document.querySelectorAll(selector);
+    var randomIndex = drawNumberFromRange(freeCells.length);
+    return freeCells[randomIndex];
+  }
+
   //funkcja showCreature ze wszystkich wolnych komórek z klasą "cell" 
   //losuje jedną i nadaje jej dodatkową klasę (tutaj: "mole" lub "butterfly")
   function showCreature(name) {
-    var freeCells = document.querySelectorAll('.cell:not(.mole):not(.butterfly)');
-    var randomIndex = Math.floor(Math.random() * freeCells.length);
-    var randomCell = freeCells[randomIndex];
+    var randomCell = drawCellFromSelector('.cell:not(.mole):not(.butterfly)');
     randomCell.classList.add(name);
   }
 
