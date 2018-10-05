@@ -3,12 +3,23 @@
 (function () {
   var board = document.querySelector('#app');
   var height = 5;
-  var width = height
+  var width = height;
 
   //wywołanie funkcji: tworzenia planszy, losowania kreta i losowania motyla
-  renderBoard(board, height, width)
-  showCreature('mole')
-  showCreature('butterfly')
+  renderBoard(board, height, width);
+
+  showCreature('mole');
+  showCreature('butterfly');
+  
+  setInterval(function() {
+    showAgainCreature('mole')
+  }, 1000) 
+  
+  setInterval(function(){
+    showAgainCreature('butterfly')
+  }, 2000)
+  
+
   killThemAll('mole')
   killThemAll('butterfly')
 
@@ -44,6 +55,17 @@
   function showCreature(name) {
     var randomCell = drawCellFromSelector('.cell:not(.mole):not(.butterfly)');
     randomCell.classList.add(name);
+    randomCell.style.animation = 'creatureAppears 0.5s linear'
+  }
+
+  function showAgainCreature(name) {
+    var creature = document.querySelector('.' + name);
+    if (creature) {
+      creature.style.animation = 'creatureHides 0.2s linear'
+      creature.classList.remove(name);
+    }
+    showCreature(name);
+    
   }
 
   // Funkcja build zwraca nowy DOM Node o nazwie takiej jak wartość argumentu `name`
@@ -57,11 +79,11 @@
   function renderBoard(board, height, width) {
     function range(size) {
       var result = [];
-    
+
       for (let i = 0; i < size; i++) {
         result.push(i)
       }
-    
+
       return result
     }
 
