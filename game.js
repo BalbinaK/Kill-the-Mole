@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
   var board = document.querySelector('#app');
   var height = 5;
@@ -55,11 +57,11 @@
   function renderBoard(board, height, width) {
     function range(size) {
       var result = [];
-
+    
       for (let i = 0; i < size; i++) {
         result.push(i)
       }
-
+    
       return result
     }
 

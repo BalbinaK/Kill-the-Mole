@@ -8,6 +8,7 @@
   height: 40px;
   background: green;
   border: 1px solid darkgreen;
+  box-sizing: border-box;
 }
 
 .mole {
