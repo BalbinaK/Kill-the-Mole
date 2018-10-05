@@ -33,6 +33,11 @@ align-items: center;
   border-radius: 5px;
 }
 
+.bottomPart {
+  display: flex;
+  justify-content: center;
+  width: 250px;
+}
 .score, .button {
   width: 100px;
   padding: 5px;
@@ -48,6 +53,7 @@ align-items: center;
 .button {
   cursor: hand;
   cursor: pointer;
+  margin-right: 5px;
 }
 
 .button:hover {
