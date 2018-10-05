@@ -1,12 +1,12 @@
 'use strict';
-var score = 0;
 
 (function () {
   var board = document.querySelector('#app');
   var scoreDiv = document.querySelector('.score')
   var height = 5;
   var width = height;
-  
+  var score = 0;
+
 
   //wywołanie funkcji: tworzenia planszy, losowania kreta i losowania motyla
   renderBoard(board, height, width);
@@ -24,18 +24,14 @@ var score = 0;
 
   killsMole();
   killsButterfly();
-  
+
 
   function killsMole() {
     killThemAll('mole')
-    score += 1;
-    // scoreDiv.innerHTML = 'Score:' + score += 1;
   }
 
   function killsButterfly() {
     killThemAll('butterfly')
-    score -= 1;
-    // scoreDiv.innerHTML = 'Score:' + score -= 1;
   }
 
   // funkcja killThemAll na kliknięcie w komórkę z klasą o określonej nazwie animuje ruch jej obrazka w dół,
@@ -43,6 +39,8 @@ var score = 0;
   function killThemAll(name) {
     board.addEventListener('click', function (event) {
       if (event.target.classList.contains(name)) {
+        name === 'mole' ? score += 1 : score -= 1
+        scoreDiv.innerHTML = 'Score: ' + score;
         event.target.style.animation = 'creatureHides 0.2s linear'
         setTimeout(function () {
           event.target.classList.remove(name)
