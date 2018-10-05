@@ -12,7 +12,7 @@
 
   //wywołanie funkcji: tworzenia planszy, losowania kreta i losowania motyla
   renderBoard(board, height, width);
- 
+
   //włączanie gry po wciśnięciu przycisku PLAY
   window.addEventListener('click', function (event) {
     if (event.target.classList.contains('play')) {
@@ -25,13 +25,19 @@
       play();
     }
   })
+  
+  killsMole();
+  killsButterfly();
 
-function resetScore() {
+
+
+  function resetScore() {
     score = 0
-    scoreDiv.innerHTML =  'Score: ' + score;
-}
+    scoreDiv.innerHTML = 'Score: ' + score;
+  }
 
   function play() {
+    playButton.classList.remove('play')
     showCreature('mole');
     showCreature('butterfly');
 
@@ -42,10 +48,6 @@ function resetScore() {
     id2 = setInterval(function () {
       showAgainCreature('butterfly')
     }, 1000)
-
-    killsMole();
-    killsButterfly();
-    playButton.classList.remove('play')
   }
 
   function gameOver() {
