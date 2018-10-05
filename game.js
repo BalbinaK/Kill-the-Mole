@@ -1,21 +1,26 @@
 'use strict';
 
 (function () {
-  var board = document.querySelector('#app');
-  var scoreDiv = document.querySelector('.score')
-  var playButton = document.querySelector('.play')
-  var endScreen = document.querySelector('.endScreen')
-  var height = 5;
-  var width = height;
-  var score = 0;
-  var id, id2
+  var board = document.querySelector('#app'),
+    scoreDiv = document.querySelector('.score'),
+    playButton = document.querySelector('.play'),
+    endScreen = document.querySelector('.endScreen'),
+    height = 5,
+    width = height,
+    score = 0,
+    id, id2;
 
   //wywołanie funkcji: tworzenia planszy, losowania kreta i losowania motyla
   renderBoard(board, height, width);
-
+ 
+  //włączanie gry po wciśnięciu przycisku PLAY
   window.addEventListener('click', function (event) {
     if (event.target === playButton) {
       endScreen.style.display = 'none';
+      let allMoles = document.querySelectorAll('.mole')
+      if (allMoles.length !== 0) {
+        allMoles.forEach(x => x.classList.remove('mole'));
+      }
       
       play();
     }
@@ -27,7 +32,7 @@
 
     id = setInterval(function () {
       showAgainCreature('mole')
-    }, 600)
+    }, 800)
 
     id2 = setInterval(function () {
       showAgainCreature('butterfly')
@@ -88,7 +93,7 @@
   function showCreature(name) {
     var randomCell = drawCellFromSelector('.cell:not(.mole):not(.butterfly)');
     randomCell.classList.add(name);
-    randomCell.style.animation = 'creatureAppears 0.5s linear'
+    randomCell.style.animation = 'creatureAppears 0.2s linear'
   }
 
   //funkcja showAgainCreature znajduje komórkę z klasą 'mole' lub 'butterfly'
