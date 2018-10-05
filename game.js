@@ -47,6 +47,7 @@
     clearInterval(id);
     clearInterval(id2);
     endScreenAppears();
+    playButton.classList.add('play')
   }
 
   function endScreenAppears() {
