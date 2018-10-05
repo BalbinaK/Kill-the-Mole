@@ -5,10 +5,12 @@
     scoreDiv = document.querySelector('.score'),
     playButton = document.querySelector('.play'),
     endScreen = document.querySelector('.endScreen'),
+    timeLeft = 59,
     height = 5,
     width = height,
     score = 0,
     id, id2;
+    
 
   //wywołanie funkcji: tworzenia planszy, losowania kreta i losowania motyla
   renderBoard(board, height, width);
@@ -46,6 +48,15 @@ function resetScore() {
     killsMole();
     killsButterfly();
     playButton.classList.remove('play')
+    playButton.classList.add('timer')
+    playButton.innerHTML = 'Time left: ' + timeLeft;
+    setInterval(function() {
+      timer()
+    }, 1000)
+  }
+
+  function timer() {
+    timeLeft -= 1
   }
 
   function gameOver() {
